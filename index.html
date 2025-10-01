@@ -190,27 +190,563 @@
             </ul>
           </div>
           <div class="indicator-visual">
-            <div class="chart-placeholder">
-              <div class="chart-candles">
-                <div class="candle green-1"></div>
-                <div class="candle green-2"></div>
-                <div class="candle green-3"></div>
-                <div class="candle red-1"></div>
-                <div class="candle red-2"></div>
-                <div class="candle green-4"></div>
-                <div class="candle blue"></div>
-                <div class="candle green-2"></div>
-                <div class="candle green-3"></div>
-                <div class="candle red-3"></div>
-                <div class="candle orange"></div>
-                <div class="candle red-2"></div>
-                <div class="candle green-1"></div>
-                <div class="candle red-1"></div>
+            <div
+              style="
+                background: linear-gradient(180deg, #1a2332 0%, #0f1419 100%);
+                border: 1px solid rgba(0, 255, 65, 0.2);
+                border-radius: 12px;
+                padding: 32px 24px;
+                height: 400px;
+                display: flex;
+                align-items: flex-end;
+                position: relative;
+              "
+            >
+              <!-- Reference line -->
+              <div
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 0;
+                  right: 0;
+                  height: 1px;
+                  background: rgba(0, 166, 251, 0.3);
+                "
+              ></div>
+
+              <!-- Candles Container -->
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  align-items: flex-end;
+                  width: 100%;
+                  height: 320px;
+                  z-index: 2;
+                  justify-content: space-around;
+                "
+              >
+                <!-- Candle 1 - Green Small (start low) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 80px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.05s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 20px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 15px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 2 - Green Medium (going up) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 120px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.1s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 25px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 12px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 3 - Green Tall (peak) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 180px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.15s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 30px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 10px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 4 - Red Medium (start decline) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #ff4444;
+                    height: 140px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+                    animation: candleGrow 1s ease-out 0.2s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 35px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 20px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 5 - Red Tall (going down) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #ff4444;
+                    height: 110px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+                    animation: candleGrow 1s ease-out 0.25s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 40px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 25px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 6 - Red Small (bottom) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #ff4444;
+                    height: 70px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+                    animation: candleGrow 1s ease-out 0.3s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 30px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 28px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 7 - Blue Oversold (recovery signal) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #3b82f6;
+                    height: 60px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+                    animation: candleGrow 1s ease-out 0.35s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 25px;
+                      background: #3b82f6;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 22px;
+                      background: #3b82f6;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 8 - Green Small (recovery start) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 90px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.4s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 22px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 18px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 9 - Green Medium (going up) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 130px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.45s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 28px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 15px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 10 - Green Tall (strong uptrend) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 170px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.5s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 32px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 12px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 11 - Orange Overbought (peak warning) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #ffa500;
+                    height: 200px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+                    animation: candleGrow 1s ease-out 0.55s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 20px;
+                      background: #ffa500;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 8px;
+                      background: #ffa500;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 12 - Red Medium (correction) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #ff4444;
+                    height: 150px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+                    animation: candleGrow 1s ease-out 0.6s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 25px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 20px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 13 - Red Small (pullback) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #ff4444;
+                    height: 120px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+                    animation: candleGrow 1s ease-out 0.65s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 30px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 22px;
+                      background: #ff4444;
+                    "
+                  ></div>
+                </div>
+
+                <!-- Candle 14 - Green Medium (continuation) -->
+                <div
+                  style="
+                    flex: 0 0 auto;
+                    width: 20px;
+                    background: #00ff41;
+                    height: 140px;
+                    border-radius: 3px;
+                    position: relative;
+                    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+                    animation: candleGrow 1s ease-out 0.7s backwards;
+                  "
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 26px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: 2px;
+                      height: 16px;
+                      background: #00ff41;
+                    "
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         <div class="indicator-item reverse">
           <div class="indicator-content">
             <div class="indicator-badge">Version 2.0</div>

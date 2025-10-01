@@ -186,20 +186,21 @@
           </div>
           <div class="indicator-visual">
             <div class="chart-placeholder">
-              <div class="chart-line"></div>
               <div class="chart-candles">
-                <div class="candle bullish bullish-1"></div>
-                <div class="candle bullish bullish-2"></div>
-                <div class="candle bullish bullish-3"></div>
-                <div class="candle bearish bearish-1"></div>
-                <div class="candle bearish bearish-2"></div>
-                <div class="candle doji"></div>
-                <div class="candle oversold"></div>
-                <div class="candle bullish bullish-4"></div>
-                <div class="candle bullish bullish-3"></div>
-                <div class="candle bearish bearish-3"></div>
-                <div class="candle overbought"></div>
-                <div class="candle bearish bearish-2"></div>
+                <div class="candle green-1"></div>
+                <div class="candle green-2"></div>
+                <div class="candle green-3"></div>
+                <div class="candle red-1"></div>
+                <div class="candle red-2"></div>
+                <div class="candle green-4"></div>
+                <div class="candle blue"></div>
+                <div class="candle green-2"></div>
+                <div class="candle green-3"></div>
+                <div class="candle red-3"></div>
+                <div class="candle orange"></div>
+                <div class="candle red-2"></div>
+                <div class="candle green-1"></div>
+                <div class="candle red-1"></div>
               </div>
             </div>
           </div>
@@ -222,17 +223,22 @@
             </ul>
           </div>
           <div class="indicator-visual">
-            <
             <div class="rsi-placeholder">
               <!-- Reference Lines -->
               <div class="rsi-reference-line top"></div>
               <div class="rsi-reference-line middle"></div>
               <div class="rsi-reference-line bottom"></div>
 
+              <!-- Zone Labels -->
+              <div class="rsi-zones">
+                <span class="zone-label overbought">Overbought 70</span>
+                <span class="zone-label middle">50</span>
+                <span class="zone-label oversold">Oversold 30</span>
+              </div>
+
               <!-- RSI Line Chart -->
               <div class="rsi-line">
-                <svg viewBox="0 0 800 200" preserveAspectRatio="none">
-                  <!-- Gradient for the line -->
+                <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
                   <defs>
                     <linearGradient
                       id="rsiGradient"
@@ -243,48 +249,42 @@
                     >
                       <stop
                         offset="0%"
-                        style="stop-color: #00ff41; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="50%"
                         style="stop-color: #00a6fb; stop-opacity: 1"
                       />
                       <stop
-                        offset="100%"
+                        offset="50%"
                         style="stop-color: #00ff41; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #00a6fb; stop-opacity: 1"
                       />
                     </linearGradient>
                   </defs>
 
-                  <!-- RSI Line Path (choppy) -->
                   <path
-                    d="M 0 100 
-                     L 50 120 
-                     L 100 140 
-                     L 150 160 
-                     L 200 170 
-                     L 250 155 
-                     L 300 130 
-                     L 350 100 
-                     L 400 70 
-                     L 450 50 
-                     L 500 40 
-                     L 550 45 
-                     L 600 60 
-                     L 650 85 
-                     L 700 110 
-                     L 750 130 
-                     L 800 120"
+                    d="M 0 200 
+                     Q 50 180, 100 160
+                     T 200 150
+                     Q 250 160, 300 180
+                     T 400 200
+                     Q 450 180, 500 140
+                     T 600 100
+                     Q 650 80, 700 60
+                     T 800 70
+                     Q 850 85, 900 110
+                     T 1000 150"
                     fill="none"
                     stroke="url(#rsiGradient)"
                     stroke-width="3"
                     stroke-linecap="round"
+                    opacity="0"
                   >
                     <animate
-                      attributeName="stroke-dasharray"
-                      from="0,1000"
-                      to="1000,0"
-                      dur="2s"
+                      attributeName="opacity"
+                      from="0"
+                      to="1"
+                      dur="1.5s"
                       fill="freeze"
                     />
                   </path>
@@ -292,16 +292,14 @@
               </div>
 
               <!-- Buy/Sell Signals -->
-              <div class="rsi-signal buy" style="left: 30%; top: 75%">B</div>
-              <div class="rsi-signal sell" style="left: 58%; top: 22%">S</div>
-              <div class="rsi-signal buy" style="left: 78%; top: 60%">B</div>
-
-              <!-- Zone Labels -->
-              <div class="rsi-zones">
-                <span class="zone-label overbought">Overbought 70</span>
-                <span class="zone-label middle">50</span>
-                <span class="zone-label oversold">Oversold 30</span>
+              <div class="rsi-signal sell" style="left: 20%; top: 15%">
+                Sell
               </div>
+              <div class="rsi-signal buy" style="left: 45%; top: 70%">Buy</div>
+              <div class="rsi-signal sell" style="left: 70%; top: 25%">
+                Sell
+              </div>
+              <div class="rsi-signal buy" style="left: 90%; top: 60%">Buy</div>
             </div>
           </div>
         </div>

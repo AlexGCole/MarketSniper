@@ -155,8 +155,8 @@
 .indicator-badge {
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-md);
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--success);
+    background: rgba(0, 255, 65, 0.2);
+    color: var(--primary);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 600;
@@ -184,13 +184,13 @@
     font-size: var(--text-base);
 }
 
-/* Chart Visualizations */
+/* Chart Visualizations - Candlestick Chart */
 .indicator-visual {
     position: relative;
 }
 
 .chart-placeholder {
-    background: rgba(15, 23, 42, 0.8);
+    background: linear-gradient(180deg, #1a2332 0%, #0f1419 100%);
     border: 1px solid rgba(0, 255, 65, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
@@ -198,47 +198,44 @@
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
-}
-
-.chart-line {
-    position: absolute;
-    bottom: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: rgba(0, 255, 65, 0.2);
-    opacity: 0.5;
+    align-items: center;
+    justify-content: center;
 }
 
 .chart-candles {
     display: flex;
-    gap: 8px;
+    gap: 4px;
     align-items: flex-end;
-    height: 100%;
+    height: 350px;
     width: 100%;
     padding: var(--spacing-lg) 0;
+    position: relative;
+}
+
+/* Horizontal reference line */
+.chart-candles::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(0, 166, 251, 0.3);
+    z-index: 0;
 }
 
 .candle {
     flex: 1;
-    border-radius: 2px;
-    animation: candleGrow 0.8s ease-out backwards;
+    border-radius: 3px;
     position: relative;
-    min-width: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-width: 8px;
+    max-width: 20px;
+    animation: candleGrow 1s ease-out backwards;
+    z-index: 1;
 }
 
-/* Candle Wicks */
-.candle::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    background: currentColor;
-}
-
+/* Candle wicks (shadows) */
+.candle::before,
 .candle::after {
     content: '';
     position: absolute;
@@ -248,148 +245,100 @@
     background: currentColor;
 }
 
-/* Bullish Candles */
-.candle.bullish {
-    background: var(--success);
-    color: var(--success);
-}
-
-.candle.bullish-1 {
-    height: 35%;
-}
-.candle.bullish-1::before {
-    height: 15%;
+.candle::before {
     bottom: 100%;
 }
-.candle.bullish-1::after {
-    height: 10%;
+
+.candle::after {
     top: 100%;
 }
 
-.candle.bullish-2 {
-    height: 50%;
+/* Green/Bullish Candles */
+.candle.green-1 {
+    background: #00ff41;
+    color: #00ff41;
+    height: 120px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
 }
-.candle.bullish-2::before {
-    height: 20%;
-    bottom: 100%;
-}
-.candle.bullish-2::after {
-    height: 8%;
-    top: 100%;
-}
+.candle.green-1::before { height: 30px; }
+.candle.green-1::after { height: 20px; }
 
-.candle.bullish-3 {
-    height: 65%;
+.candle.green-2 {
+    background: #00ff41;
+    color: #00ff41;
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
 }
-.candle.bullish-3::before {
-    height: 15%;
-    bottom: 100%;
-}
-.candle.bullish-3::after {
-    height: 5%;
-    top: 100%;
-}
+.candle.green-2::before { height: 25px; }
+.candle.green-2::after { height: 15px; }
 
-.candle.bullish-4 {
-    height: 45%;
+.candle.green-3 {
+    background: #00ff41;
+    color: #00ff41;
+    height: 180px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
 }
-.candle.bullish-4::before {
-    height: 12%;
-    bottom: 100%;
-}
-.candle.bullish-4::after {
-    height: 15%;
-    top: 100%;
-}
+.candle.green-3::before { height: 20px; }
+.candle.green-3::after { height: 10px; }
 
-/* Bearish Candles */
-.candle.bearish {
-    background: var(--danger);
-    color: var(--danger);
+.candle.green-4 {
+    background: #00ff41;
+    color: #00ff41;
+    height: 140px;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
 }
+.candle.green-4::before { height: 35px; }
+.candle.green-4::after { height: 18px; }
 
-.candle.bearish-1 {
-    height: 55%;
+/* Red/Bearish Candles */
+.candle.red-1 {
+    background: #ff4444;
+    color: #ff4444;
+    height: 110px;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
 }
-.candle.bearish-1::before {
-    height: 18%;
-    bottom: 100%;
-}
-.candle.bearish-1::after {
-    height: 10%;
-    top: 100%;
-}
+.candle.red-1::before { height: 28px; }
+.candle.red-1::after { height: 22px; }
 
-.candle.bearish-2 {
-    height: 42%;
+.candle.red-2 {
+    background: #ff4444;
+    color: #ff4444;
+    height: 95px;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
 }
-.candle.bearish-2::before {
-    height: 25%;
-    bottom: 100%;
-}
-.candle.bearish-2::after {
-    height: 12%;
-    top: 100%;
-}
+.candle.red-2::before { height: 32px; }
+.candle.red-2::after { height: 25px; }
 
-.candle.bearish-3 {
-    height: 38%;
+.candle.red-3 {
+    background: #ff4444;
+    color: #ff4444;
+    height: 130px;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
 }
-.candle.bearish-3::before {
-    height: 15%;
-    bottom: 100%;
-}
-.candle.bearish-3::after {
-    height: 20%;
-    top: 100%;
-}
+.candle.red-3::before { height: 20px; }
+.candle.red-3::after { height: 15px; }
 
-/* Oversold Candle */
-.candle.oversold {
+/* Blue Oversold Candle */
+.candle.blue {
     background: #3b82f6;
     color: #3b82f6;
-    height: 28%;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
-.candle.oversold::before {
-    height: 10%;
-    bottom: 100%;
-}
-.candle.oversold::after {
-    height: 8%;
-    top: 100%;
-}
+.candle.blue::before { height: 25px; }
+.candle.blue::after { height: 20px; }
 
-/* Overbought Candle */
-.candle.overbought {
-    background: var(--warning);
-    color: var(--warning);
-    height: 75%;
+/* Orange Overbought Candle */
+.candle.orange {
+    background: #ffa500;
+    color: #ffa500;
+    height: 200px;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
 }
-.candle.overbought::before {
-    height: 12%;
-    bottom: 100%;
-}
-.candle.overbought::after {
-    height: 5%;
-    top: 100%;
-}
+.candle.orange::before { height: 15px; }
+.candle.orange::after { height: 10px; }
 
-/* Doji/Neutral Candles */
-.candle.doji {
-    background: var(--gray-light);
-    color: var(--gray-light);
-    height: 48%;
-}
-.candle.doji::before {
-    height: 20%;
-    bottom: 100%;
-}
-.candle.doji::after {
-    height: 20%;
-    top: 100%;
-}
-
-/* Animation delays */
+/* Animation delays for staggered effect */
 .candle:nth-child(1) { animation-delay: 0.05s; }
 .candle:nth-child(2) { animation-delay: 0.1s; }
 .candle:nth-child(3) { animation-delay: 0.15s; }
@@ -402,16 +351,12 @@
 .candle:nth-child(10) { animation-delay: 0.5s; }
 .candle:nth-child(11) { animation-delay: 0.55s; }
 .candle:nth-child(12) { animation-delay: 0.6s; }
+.candle:nth-child(13) { animation-delay: 0.65s; }
+.candle:nth-child(14) { animation-delay: 0.7s; }
 
-/* Hover effect */
-.candle:hover {
-    opacity: 0.8;
-    transform: scaleY(1.05);
-}
-
-/* RSI Visualization */
+/* RSI Chart */
 .rsi-placeholder {
-    background: rgba(15, 23, 42, 0.8);
+    background: linear-gradient(180deg, #1a2332 0%, #0f1419 100%);
     border: 1px solid rgba(0, 255, 65, 0.2);
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
@@ -420,13 +365,73 @@
     overflow: hidden;
 }
 
+/* RSI Reference Lines */
+.rsi-reference-line {
+    position: absolute;
+    left: 40px;
+    right: var(--spacing-lg);
+    height: 1px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.rsi-reference-line.top {
+    top: 20%;
+    background: rgba(255, 68, 68, 0.3);
+}
+
+.rsi-reference-line.middle {
+    top: 50%;
+    background: rgba(0, 166, 251, 0.3);
+}
+
+.rsi-reference-line.bottom {
+    top: 80%;
+    background: rgba(59, 130, 246, 0.3);
+}
+
+/* Zone Labels */
+.rsi-zones {
+    position: absolute;
+    left: var(--spacing-sm);
+    top: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.zone-label {
+    font-size: var(--text-xs);
+    color: var(--gray-light);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+}
+
+.zone-label.overbought {
+    color: #ff4444;
+}
+
+.zone-label.middle {
+    color: #00a6fb;
+}
+
+.zone-label.oversold {
+    color: #3b82f6;
+}
+
+/* RSI Line */
 .rsi-line {
     position: absolute;
-    left: var(--spacing-lg);
+    left: 40px;
     right: var(--spacing-lg);
-    top: 50%;
-    transform: translateY(-50%);
-    height: 200px;
+    top: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+    z-index: 5;
 }
 
 .rsi-line svg {
@@ -434,84 +439,28 @@
     height: 100%;
 }
 
-.rsi-zones {
-    position: absolute;
-    left: var(--spacing-lg);
-    top: var(--spacing-lg);
-    bottom: var(--spacing-lg);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    pointer-events: none;
-}
-
-.zone-label {
-    font-size: var(--text-sm);
-    color: var(--gray-light);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-.zone-label.overbought {
-    color: var(--danger);
-}
-
-.zone-label.middle {
-    color: var(--primary-light);
-}
-
-.zone-label.oversold {
-    color: var(--accent);
-}
-
-/* RSI Reference Lines */
-.rsi-reference-line {
-    position: absolute;
-    left: var(--spacing-lg);
-    right: var(--spacing-lg);
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-}
-
-.rsi-reference-line.top {
-    top: 20%;
-}
-
-.rsi-reference-line.middle {
-    top: 50%;
-}
-
-.rsi-reference-line.bottom {
-    top: 80%;
-}
-
-/* Buy/Sell Signal Icons */
+/* Buy/Sell Signals */
 .rsi-signal {
     position: absolute;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
     font-weight: bold;
     animation: signalPulse 2s ease-in-out infinite;
-    z-index: 10;
+    z-index: 20;
+    text-transform: uppercase;
 }
 
 .rsi-signal.buy {
-    background: var(--success);
-    color: white;
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
 }
 
 .rsi-signal.sell {
-    background: var(--danger);
-    color: white;
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    background: #ff4444;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
 }
 
 /* Trading Bot */
@@ -856,34 +805,6 @@
     
     .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
-    }
-}
-
-/* Button Loading State (optional) */
-.btn.loading {
-    position: relative;
-    color: transparent;
-    pointer-events: none;
-}
-
-.btn.loading::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 50%;
-    left: 50%;
-    margin-left: -8px;
-    margin-top: -8px;
-    border: 2px solid var(--white);
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 0.6s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
     }
 }
 

@@ -1,28 +1,28 @@
 :root {
-    /* Colors - Orange/Navy Trading Theme */
-    --primary: #ff6b35;
-    --primary-dark: #e85a2b;
-    --primary-light: #ff8556;
-    --secondary: #004e89;
-    --secondary-dark: #003d6e;
-    --accent: #00a6fb;
-    --success: #10b981;
+    /* Colors - Green Trading Theme (matching your image) */
+    --primary: #00ff41;
+    --primary-dark: #00cc34;
+    --primary-light: #33ff66;
+    --secondary: #0a4d2e;
+    --secondary-dark: #072e1c;
+    --accent: #00ff41;
+    --success: #00ff41;
     --warning: #ffa500;
     --danger: #ef4444;
     
     /* Neutrals */
-    --dark: #1a1a2e;
-    --darker: #16213e;
-    --gray: #334155;
-    --gray-light: #94a3b8;
-    --light: #f8f9fa;
+    --dark: #0a0e0d;
+    --darker: #050807;
+    --gray: #1a2e24;
+    --gray-light: #6b8f7a;
+    --light: #e8f5e9;
     --white: #ffffff;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #ff8556 100%);
-    --gradient-secondary: linear-gradient(135deg, #004e89 0%, #00a6fb 100%);
-    --gradient-accent: linear-gradient(135deg, #00a6fb 0%, #004e89 100%);
-    --gradient-dark: linear-gradient(180deg, #16213e 0%, #1a1a2e 100%);
+    --gradient-primary: linear-gradient(135deg, #00ff41 0%, #00cc34 100%);
+    --gradient-secondary: linear-gradient(135deg, #0a4d2e 0%, #00ff41 100%);
+    --gradient-accent: linear-gradient(135deg, #00ff41 0%, #33ff66 100%);
+    --gradient-dark: linear-gradient(180deg, #050807 0%, #0a0e0d 100%);
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -46,8 +46,8 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.3);
-    --shadow-glow-blue: 0 0 30px rgba(0, 166, 251, 0.3);
+    --shadow-glow: 0 0 30px rgba(0, 255, 65, 0.4);
+    --shadow-glow-green: 0 0 40px rgba(0, 255, 65, 0.5);
     
     /* Transitions */
     --transition-fast: 150ms ease-in-out;

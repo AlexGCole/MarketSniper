@@ -228,83 +228,244 @@
             </ul>
           </div>
           <div class="indicator-visual">
-            <div class="rsi-placeholder">
+            <div
+              style="
+                background: linear-gradient(180deg, #1a2332 0%, #0f1419 100%);
+                border: 1px solid rgba(0, 255, 65, 0.2);
+                border-radius: 12px;
+                padding: 24px;
+                height: 400px;
+                position: relative;
+              "
+            >
               <!-- Reference Lines -->
-              <div class="rsi-reference-line top"></div>
-              <div class="rsi-reference-line middle"></div>
-              <div class="rsi-reference-line bottom"></div>
+              <div
+                style="
+                  position: absolute;
+                  left: 60px;
+                  right: 24px;
+                  top: 20%;
+                  height: 1px;
+                  background: rgba(255, 68, 68, 0.3);
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  left: 60px;
+                  right: 24px;
+                  top: 50%;
+                  height: 1px;
+                  background: rgba(0, 166, 251, 0.3);
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  left: 60px;
+                  right: 24px;
+                  top: 80%;
+                  height: 1px;
+                  background: rgba(59, 130, 246, 0.3);
+                "
+              ></div>
 
               <!-- Zone Labels -->
-              <div class="rsi-zones">
-                <span class="zone-label overbought">Overbought 70</span>
-                <span class="zone-label middle">50</span>
-                <span class="zone-label oversold">Oversold 30</span>
+              <div
+                style="
+                  position: absolute;
+                  left: 8px;
+                  top: 16%;
+                  font-size: 11px;
+                  color: #ff4444;
+                  background: rgba(0, 0, 0, 0.6);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  font-family: monospace;
+                "
+              >
+                Overbought 70
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  left: 8px;
+                  top: 46%;
+                  font-size: 11px;
+                  color: #00a6fb;
+                  background: rgba(0, 0, 0, 0.6);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  font-family: monospace;
+                "
+              >
+                50
+              </div>
+              <div
+                style="
+                  position: absolute;
+                  left: 8px;
+                  top: 76%;
+                  font-size: 11px;
+                  color: #3b82f6;
+                  background: rgba(0, 0, 0, 0.6);
+                  padding: 2px 6px;
+                  border-radius: 4px;
+                  font-family: monospace;
+                "
+              >
+                Oversold 30
               </div>
 
-              <!-- RSI Line Chart -->
-              <div class="rsi-line">
-                <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient
-                      id="rsiGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop
-                        offset="0%"
-                        style="stop-color: #00a6fb; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="50%"
-                        style="stop-color: #00ff41; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="100%"
-                        style="stop-color: #00a6fb; stop-opacity: 1"
-                      />
-                    </linearGradient>
-                  </defs>
-
-                  <path
-                    d="M 0 200 
-                                         Q 50 180, 100 160
-                                         T 200 150
-                                         Q 250 160, 300 180
-                                         T 400 200
-                                         Q 450 180, 500 140
-                                         T 600 100
-                                         Q 650 80, 700 60
-                                         T 800 70
-                                         Q 850 85, 900 110
-                                         T 1000 150"
-                    fill="none"
-                    stroke="url(#rsiGradient)"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    opacity="0"
+              <!-- RSI Line -->
+              <svg
+                viewBox="0 0 1000 300"
+                preserveAspectRatio="none"
+                style="
+                  position: absolute;
+                  left: 60px;
+                  right: 24px;
+                  top: 24px;
+                  bottom: 24px;
+                  width: calc(100% - 84px);
+                  height: calc(100% - 48px);
+                "
+              >
+                <defs>
+                  <linearGradient
+                    id="rsiGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
                   >
-                    <animate
-                      attributeName="opacity"
-                      from="0"
-                      to="1"
-                      dur="1.5s"
-                      fill="freeze"
+                    <stop
+                      offset="0%"
+                      style="stop-color: #3b82f6; stop-opacity: 1"
                     />
-                  </path>
-                </svg>
-              </div>
+                    <stop
+                      offset="33%"
+                      style="stop-color: #ff4444; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="66%"
+                      style="stop-color: #00ff41; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #ffa500; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
+
+                <path
+                  d="M 0 220 
+                         Q 50 200, 100 180
+                         T 200 160
+                         Q 250 140, 300 120
+                         T 400 80
+                         Q 450 60, 500 50
+                         T 600 80
+                         Q 650 110, 700 150
+                         T 800 200
+                         Q 850 220, 900 230
+                         T 1000 240"
+                  fill="none"
+                  stroke="url(#rsiGradient)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  opacity="0"
+                >
+                  <animate
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    dur="1.5s"
+                    fill="freeze"
+                  />
+                </path>
+              </svg>
 
               <!-- Buy/Sell Signals -->
-              <div class="rsi-signal sell" style="left: 20%; top: 15%">
-                Sell
+              <div
+                style="
+                  position: absolute;
+                  left: 25%;
+                  top: 18%;
+                  padding: 4px 12px;
+                  border-radius: 4px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  background: #ff4444;
+                  color: #fff;
+                  box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
+                  animation: signalPulse 2s ease-in-out infinite;
+                  text-transform: uppercase;
+                  z-index: 20;
+                "
+              >
+                SELL
               </div>
-              <div class="rsi-signal buy" style="left: 45%; top: 70%">Buy</div>
-              <div class="rsi-signal sell" style="left: 70%; top: 25%">
-                Sell
+
+              <div
+                style="
+                  position: absolute;
+                  left: 48%;
+                  top: 70%;
+                  padding: 4px 12px;
+                  border-radius: 4px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  background: #00ff41;
+                  color: #000;
+                  box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
+                  animation: signalPulse 2s ease-in-out infinite;
+                  text-transform: uppercase;
+                  z-index: 20;
+                "
+              >
+                BUY
               </div>
-              <div class="rsi-signal buy" style="left: 90%; top: 60%">Buy</div>
+
+              <div
+                style="
+                  position: absolute;
+                  left: 72%;
+                  top: 25%;
+                  padding: 4px 12px;
+                  border-radius: 4px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  background: #ff4444;
+                  color: #fff;
+                  box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
+                  animation: signalPulse 2s ease-in-out infinite;
+                  text-transform: uppercase;
+                  z-index: 20;
+                "
+              >
+                SELL
+              </div>
+
+              <div
+                style="
+                  position: absolute;
+                  left: 88%;
+                  top: 65%;
+                  padding: 4px 12px;
+                  border-radius: 4px;
+                  font-size: 11px;
+                  font-weight: bold;
+                  background: #00ff41;
+                  color: #000;
+                  box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
+                  animation: signalPulse 2s ease-in-out infinite;
+                  text-transform: uppercase;
+                  z-index: 20;
+                "
+              >
+                BUY
+              </div>
             </div>
           </div>
         </div>

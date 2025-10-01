@@ -1,26 +1,28 @@
 :root {
-    /* Colors */
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary: #8b5cf6;
-    --accent: #ec4899;
+    /* Colors - Orange/Navy Trading Theme */
+    --primary: #ff6b35;
+    --primary-dark: #e85a2b;
+    --primary-light: #ff8556;
+    --secondary: #004e89;
+    --secondary-dark: #003d6e;
+    --accent: #00a6fb;
     --success: #10b981;
-    --warning: #f59e0b;
+    --warning: #ffa500;
     --danger: #ef4444;
     
     /* Neutrals */
-    --dark: #0f172a;
-    --darker: #020617;
+    --dark: #1a1a2e;
+    --darker: #16213e;
     --gray: #334155;
-    --gray-light: #64748b;
-    --light: #f1f5f9;
+    --gray-light: #94a3b8;
+    --light: #f8f9fa;
     --white: #ffffff;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
-    --gradient-dark: linear-gradient(180deg, var(--darker) 0%, var(--dark) 100%);
+    --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #ff8556 100%);
+    --gradient-secondary: linear-gradient(135deg, #004e89 0%, #00a6fb 100%);
+    --gradient-accent: linear-gradient(135deg, #00a6fb 0%, #004e89 100%);
+    --gradient-dark: linear-gradient(180deg, #16213e 0%, #1a1a2e 100%);
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -44,7 +46,8 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+    --shadow-glow: 0 0 30px rgba(255, 107, 53, 0.3);
+    --shadow-glow-blue: 0 0 30px rgba(0, 166, 251, 0.3);
     
     /* Transitions */
     --transition-fast: 150ms ease-in-out;

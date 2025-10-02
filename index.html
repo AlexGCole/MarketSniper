@@ -19,7 +19,13 @@
       <div class="container">
         <nav class="navbar">
           <div class="logo">
-            <span class="logo-icon">⦿</span>
+            <span class="logo-icon">
+              <img
+                src="assets/images/logo.jpg"
+                alt="Market Sniper Logo"
+                onerror="this.parentElement.innerHTML='⦿'"
+              />
+            </span>
             <span class="logo-text">Market Sniper</span>
           </div>
           <ul class="nav-links">
@@ -226,7 +232,7 @@
                   justify-content: space-around;
                 "
               >
-                <!-- Candle 1 - Green Small (start low) -->
+                <!-- Candle 1 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -263,7 +269,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 2 - Green Medium (going up) -->
+                <!-- Candle 2 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -300,7 +306,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 3 - Green Tall (peak) -->
+                <!-- Candle 3 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -337,7 +343,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 4 - Red Medium (start decline) -->
+                <!-- Candle 4 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -374,7 +380,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 5 - Red Tall (going down) -->
+                <!-- Candle 5 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -411,7 +417,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 6 - Red Small (bottom) -->
+                <!-- Candle 6 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -448,7 +454,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 7 - Blue Oversold (recovery signal) -->
+                <!-- Candle 7 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -485,7 +491,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 8 - Green Small (recovery start) -->
+                <!-- Candle 8 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -522,7 +528,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 9 - Green Medium (going up) -->
+                <!-- Candle 9 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -559,7 +565,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 10 - Green Tall (strong uptrend) -->
+                <!-- Candle 10 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -596,7 +602,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 11 - Orange Overbought (peak warning) -->
+                <!-- Candle 11 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -633,7 +639,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 12 - Red Medium (correction) -->
+                <!-- Candle 12 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -670,7 +676,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 13 - Red Small (pullback) -->
+                <!-- Candle 13 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -707,7 +713,7 @@
                   ></div>
                 </div>
 
-                <!-- Candle 14 - Green Medium (continuation) -->
+                <!-- Candle 14 -->
                 <div
                   style="
                     flex: 0 0 auto;
@@ -869,7 +875,6 @@
                 "
               >
                 <defs>
-                  <!-- Blue gradient for below 30 (oversold) -->
                   <linearGradient
                     id="blueZone"
                     x1="0%"
@@ -887,7 +892,6 @@
                     />
                   </linearGradient>
 
-                  <!-- Red gradient for 30-50 -->
                   <linearGradient
                     id="redZone"
                     x1="0%"
@@ -905,7 +909,6 @@
                     />
                   </linearGradient>
 
-                  <!-- Green gradient for 50-70 -->
                   <linearGradient
                     id="greenZone"
                     x1="0%"
@@ -923,7 +926,6 @@
                     />
                   </linearGradient>
 
-                  <!-- Orange gradient for above 70 (overbought) -->
                   <linearGradient
                     id="orangeZone"
                     x1="0%"
@@ -942,8 +944,6 @@
                   </linearGradient>
                 </defs>
 
-                <!-- RSI Line Path -->
-                <!-- Below 30 (Blue) - Oversold zone -->
                 <path
                   d="M 0 260 
                          L 50 255
@@ -963,7 +963,6 @@
                   />
                 </path>
 
-                <!-- 30-50 (Red) - Moving up from oversold -->
                 <path
                   d="M 100 250
                          L 150 230
@@ -984,7 +983,6 @@
                   />
                 </path>
 
-                <!-- Crossing 50 line upward (BUY signal here) -->
                 <path
                   d="M 250 180
                          L 300 140
@@ -1004,7 +1002,6 @@
                   />
                 </path>
 
-                <!-- 50-70 (Green) - Bullish zone -->
                 <path
                   d="M 350 120
                          L 400 100
@@ -1024,7 +1021,6 @@
                   />
                 </path>
 
-                <!-- Above 70 (Orange) - Overbought -->
                 <path
                   d="M 450 85
                          L 500 50
@@ -1044,7 +1040,6 @@
                   />
                 </path>
 
-                <!-- Coming back down - Orange to Green -->
                 <path
                   d="M 550 40
                          L 600 70
@@ -1064,7 +1059,6 @@
                   />
                 </path>
 
-                <!-- Green zone 50-70 -->
                 <path
                   d="M 650 110
                          L 700 140"
@@ -1083,7 +1077,6 @@
                   />
                 </path>
 
-                <!-- Crossing 50 line downward (SELL signal here) -->
                 <path
                   d="M 700 140
                          L 750 160
@@ -1103,7 +1096,6 @@
                   />
                 </path>
 
-                <!-- Red zone 30-50 -->
                 <path
                   d="M 800 180
                          L 850 200
@@ -1123,7 +1115,6 @@
                   />
                 </path>
 
-                <!-- Below 30 (Blue) - Oversold again -->
                 <path
                   d="M 900 210
                          L 950 230
@@ -1144,8 +1135,7 @@
                 </path>
               </svg>
 
-              <!-- Buy/Sell Signals at 50 line crossings -->
-              <!-- BUY Signal - Crossing UP through 50 -->
+              <!-- Buy/Sell Signals -->
               <div
                 style="
                   position: absolute;
@@ -1166,7 +1156,6 @@
                 BUY
               </div>
 
-              <!-- SELL Signal - Crossing DOWN through 50 -->
               <div
                 style="
                   position: absolute;
@@ -1366,7 +1355,13 @@
         <div class="footer-content">
           <div class="footer-brand">
             <div class="logo">
-              <span class="logo-icon">⦿</span>
+              <span class="logo-icon">
+                <img
+                  src="assets/images/logo.jpg"
+                  alt="Market Sniper Logo"
+                  onerror="this.parentElement.innerHTML='⦿'"
+                />
+              </span>
               <span class="logo-text">Market Sniper</span>
             </div>
             <p>Precision trading tools for professional traders</p>

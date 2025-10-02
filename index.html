@@ -194,7 +194,7 @@
           <div class="indicator-visual">
             <div
               style="
-                background: linear-gradient(180deg, #1a2332 0%, #0f1419 100%);
+                background: #1b1f2b;
                 border: 1px solid rgba(0, 255, 65, 0.2);
                 border-radius: 12px;
                 padding: 0;
@@ -207,7 +207,7 @@
               "
             >
               <img 
-                src="assets/images/sharp-shooter-candles.jpg" 
+                src="assets/images/sharp-shooter-candles.png" 
                 alt="Sharp Shooter Candles Indicator" 
                 style="
                   width: 100%;
@@ -239,409 +239,28 @@
           <div class="indicator-visual">
             <div
               style="
-                background: linear-gradient(180deg, #1a2332 0%, #0f1419 100%);
+                background: #1b1f2b;
                 border: 1px solid rgba(0, 255, 65, 0.2);
                 border-radius: 12px;
-                padding: 24px;
+                padding: 0;
                 height: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 position: relative;
+                overflow: hidden;
               "
             >
-              <!-- Reference Lines -->
-              <div
+              <img 
+                src="assets/images/sharp-shooter-rsi.png" 
+                alt="Sharp Shooter RSI Indicator" 
                 style="
-                  position: absolute;
-                  left: 60px;
-                  right: 24px;
-                  top: 20%;
-                  height: 1px;
-                  background: rgba(255, 165, 0, 0.5);
-                "
-              ></div>
-              <div
-                style="
-                  position: absolute;
-                  left: 60px;
-                  right: 24px;
-                  top: 50%;
-                  height: 1px;
-                  background: rgba(0, 255, 65, 0.5);
-                  z-index: 15;
-                "
-              ></div>
-              <div
-                style="
-                  position: absolute;
-                  left: 60px;
-                  right: 24px;
-                  top: 80%;
-                  height: 1px;
-                  background: rgba(59, 130, 246, 0.5);
-                "
-              ></div>
-
-              <!-- Zone Labels -->
-              <div
-                style="
-                  position: absolute;
-                  left: 8px;
-                  top: 16%;
-                  font-size: 11px;
-                  color: #ffa500;
-                  background: rgba(0, 0, 0, 0.6);
-                  padding: 2px 6px;
-                  border-radius: 4px;
-                  font-family: monospace;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  border-radius: 12px;
                 "
               >
-                Overbought 70
-              </div>
-              <div
-                style="
-                  position: absolute;
-                  left: 8px;
-                  top: 46%;
-                  font-size: 11px;
-                  color: #00ff41;
-                  background: rgba(0, 0, 0, 0.6);
-                  padding: 2px 6px;
-                  border-radius: 4px;
-                  font-family: monospace;
-                "
-              >
-                50
-              </div>
-              <div
-                style="
-                  position: absolute;
-                  left: 8px;
-                  top: 76%;
-                  font-size: 11px;
-                  color: #3b82f6;
-                  background: rgba(0, 0, 0, 0.6);
-                  padding: 2px 6px;
-                  border-radius: 4px;
-                  font-family: monospace;
-                "
-              >
-                Oversold 30
-              </div>
-
-              <!-- RSI Line with Color Zones -->
-              <svg
-                viewBox="0 0 1000 300"
-                preserveAspectRatio="none"
-                style="
-                  position: absolute;
-                  left: 60px;
-                  right: 24px;
-                  top: 24px;
-                  bottom: 24px;
-                  width: calc(100% - 84px);
-                  height: calc(100% - 48px);
-                "
-              >
-                <defs>
-                  <linearGradient
-                    id="blueZone"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: #3b82f6; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #3b82f6; stop-opacity: 1"
-                    />
-                  </linearGradient>
-
-                  <linearGradient
-                    id="redZone"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: #ff4444; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #ff4444; stop-opacity: 1"
-                    />
-                  </linearGradient>
-
-                  <linearGradient
-                    id="greenZone"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: #00ff41; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #00ff41; stop-opacity: 1"
-                    />
-                  </linearGradient>
-
-                  <linearGradient
-                    id="orangeZone"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop
-                      offset="0%"
-                      style="stop-color: #ffa500; stop-opacity: 1"
-                    />
-                    <stop
-                      offset="100%"
-                      style="stop-color: #ffa500; stop-opacity: 1"
-                    />
-                  </linearGradient>
-                </defs>
-
-                <path
-                  d="M 0 260 
-                         L 50 255
-                         L 100 250"
-                  fill="none"
-                  stroke="url(#blueZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 100 250
-                         L 150 230
-                         L 200 210
-                         L 250 180"
-                  fill="none"
-                  stroke="url(#redZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 250 180
-                         L 300 140
-                         L 350 120"
-                  fill="none"
-                  stroke="url(#greenZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 350 120
-                         L 400 100
-                         L 450 85"
-                  fill="none"
-                  stroke="url(#greenZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 450 85
-                         L 500 50
-                         L 550 40"
-                  fill="none"
-                  stroke="url(#orangeZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 550 40
-                         L 600 70
-                         L 650 110"
-                  fill="none"
-                  stroke="url(#orangeZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 650 110
-                         L 700 140"
-                  fill="none"
-                  stroke="url(#greenZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 700 140
-                         L 750 160
-                         L 800 180"
-                  fill="none"
-                  stroke="url(#redZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 800 180
-                         L 850 200
-                         L 900 210"
-                  fill="none"
-                  stroke="url(#redZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-
-                <path
-                  d="M 900 210
-                         L 950 230
-                         L 1000 245"
-                  fill="none"
-                  stroke="url(#blueZone)"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  opacity="0"
-                >
-                  <animate
-                    attributeName="opacity"
-                    from="0"
-                    to="1"
-                    dur="1.5s"
-                    fill="freeze"
-                  />
-                </path>
-              </svg>
-
-              <!-- Buy/Sell Signals -->
-              <div
-                style="
-                  position: absolute;
-                  left: 28%;
-                  top: 48%;
-                  padding: 4px 12px;
-                  border-radius: 4px;
-                  font-size: 11px;
-                  font-weight: bold;
-                  background: #00ff41;
-                  color: #000;
-                  box-shadow: 0 0 15px rgba(0, 255, 65, 0.6);
-                  animation: signalPulse 2s ease-in-out infinite;
-                  text-transform: uppercase;
-                  z-index: 20;
-                "
-              >
-                BUY
-              </div>
-
-              <div
-                style="
-                  position: absolute;
-                  left: 72%;
-                  top: 48%;
-                  padding: 4px 12px;
-                  border-radius: 4px;
-                  font-size: 11px;
-                  font-weight: bold;
-                  background: #ff4444;
-                  color: #fff;
-                  box-shadow: 0 0 15px rgba(255, 68, 68, 0.6);
-                  animation: signalPulse 2s ease-in-out infinite;
-                  text-transform: uppercase;
-                  z-index: 20;
-                "
-              >
-                SELL
-              </div>
             </div>
           </div>
         </div>

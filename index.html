@@ -16,8 +16,8 @@
   <body>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container">
-        <nav class="navbar">
+      <nav class="navbar">
+        <div class="container">
           <div class="logo">
             <span class="logo-icon">
               <img src="assets/images/logo.jpg" alt="Market Sniper Logo" onerror="this.parentElement.innerHTML='⦿'">
@@ -39,7 +39,9 @@
             <span></span>
             <span></span>
           </button>
-        </nav>
+        </div>
+      </nav>
+      <div class="container">
 
         <div class="hero-content">
           <div class="hero-badge">🎯 Professional Trading Tools</div>
@@ -218,29 +220,10 @@
             </ul>
           </div>
           <div class="indicator-visual">
-            <div
-              style="
-                background: #1b1f2b;
-                border: 1px solid rgba(0, 255, 65, 0.2);
-                border-radius: 12px;
-                padding: 0;
-                height: 400px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                overflow: hidden;
-              "
-            >
+            <div class="indicator-visual-container">
               <img 
                 src="assets/images/sharp-shooter-rsi.png" 
-                alt="Sharp Shooter RSI Indicator" 
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  border-radius: 12px;
-                "
+                alt="Sharp Shooter RSI Indicator"
               >
             </div>
           </div>
